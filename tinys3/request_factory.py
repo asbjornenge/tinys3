@@ -41,7 +41,7 @@ class S3Request(object):
         protocol = 'https' if self.tls else 'http'
         key = stringify(key)
         bucket = stringify(bucket)
-        url = "{0}://{1}.{2}/{3}".format(protocol, bucket, self.endpoint,
+        url = "{0}://{1}/{2}/{3}".format(protocol, self.endpoint, bucket,
                                          key.lstrip('/'))
         # If params have been specified, add them to URL in the format :
         # url?param1&param2=value, etc.
